@@ -67,9 +67,9 @@ async function createUser(user: User) {
 
   const id = users.length + 1;
 
-  users.push({ ...user, id });
+  users.push({ id, ...user });
 
-  await fs.writeFile("./data/users.json", JSON.stringify(users, null, 2));
+  await fs.writeFile("./src/data/users.json", JSON.stringify(users, null, 2));
 
   return id;
 }
